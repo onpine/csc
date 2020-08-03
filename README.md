@@ -1,4 +1,4 @@
-# vuecli-demo
+# CodeSharingCommunity
 
 ## Project setup
 ```
