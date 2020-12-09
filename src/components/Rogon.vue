@@ -173,8 +173,8 @@ export default {
             console.log(document.cookie);
             that.AccessToken = Response.data.json.AccessToken;
 
-            // document.cookie =
-            //   "Authorization=" + Response.data.json.AccessToken + "; path=/;";
+            document.cookie =
+              "Authorization=" + Response.data.json.AccessToken + "; path=/;";
 
             that.$store.commit("setsessionId", Response.data.json.AccessToken);
             /**

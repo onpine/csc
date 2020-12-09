@@ -161,7 +161,7 @@ export default {
             // console.log(Response.data.json.user);
             that.user = { ...this.user, ...this.$store.getters.getuser };
             that.imgsrc =
-              "http://121.199.27.93/img/" + Response.data.json.user.imgpath;
+              "http://121.199.27.93/user/image/" + Response.data.json.user.imgpath;
 
             val = true;
           } else {

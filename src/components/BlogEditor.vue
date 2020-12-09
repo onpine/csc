@@ -122,7 +122,7 @@ export default {
           // console.log(url.data.json);
           that.$refs.md.$img2Url(
             pos,
-            "http://121.199.27.93/blob/img/" + url.data.json.img
+            "http://121.199.27.93/blob/image/" + url.data.json.img
           );
         })
         .catch((error) => {

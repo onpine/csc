@@ -4,13 +4,17 @@
       <li v-for="(citem, cindex) in list" :key="cindex">
         <div class="img">
           <img
-            @click="resolve('/LoggingStatus/Author/'+citem.uid)"
-            :src="'http://121.199.27.93/img/'+citem.imgpath"
+            @click="resolve('/LoggingStatus/Author/' + citem.uid)"
+            :src="'http://121.199.27.93/user/image/' + citem.imgpath"
             alt="img"
           />
-          <b @click="resolve('/LoggingStatus/Author/'+citem.uid)" class="b1">{{citem.username}}</b>
-          <span class="b2">{{citem.college}}</span>
-          <span class="b2">{{citem.clazz}}</span>
+          <b
+            @click="resolve('/LoggingStatus/Author/' + citem.uid)"
+            class="b1"
+            >{{ citem.username }}</b
+          >
+          <span class="b2">{{ citem.college }}</span>
+          <span class="b2">{{ citem.clazz }}</span>
           <input @click="delike(citem.uid)" type="button" value="取消关注" />
         </div>
       </li>

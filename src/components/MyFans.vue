@@ -4,7 +4,7 @@
       <li v-for="(item, index) in list" :key="index">
         <div class="img">
           <img
-            :src="'http://121.199.27.93/img/' + item.user.imgpath"
+            :src="'http://121.199.27.93/user/image/' + item.user.imgpath"
             alt="img"
           />
           <b class="b1">{{ item.user.username }}</b>

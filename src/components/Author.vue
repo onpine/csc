@@ -2,43 +2,43 @@
   <div id="author">
     <div class="content">
       <img class="img" :src="author.imgpath" alt />
-      <h3>{{author.username}}</h3>
+      <h3>{{ author.username }}</h3>
       <div class="data">
         <ul>
           <li>
-            <b>{{author.original}}</b>
+            <b>{{ author.original }}</b>
             <b>原创</b>
           </li>
           <li>
-            <b>{{author.files}}</b>
+            <b>{{ author.files }}</b>
             <b>文件</b>
           </li>
           <li>
-            <b>{{author.visits}}</b>
+            <b>{{ author.visits }}</b>
             <b>访问</b>
           </li>
           <li>
-            <b>{{author.downloads}}</b>
+            <b>{{ author.downloads }}</b>
             <b>下载</b>
           </li>
           <li>
-            <b>{{author.collection}}</b>
+            <b>{{ author.collection }}</b>
             <b>收藏</b>
           </li>
           <li>
-            <b>{{author.thumbs}}</b>
+            <b>{{ author.thumbs }}</b>
             <b>点赞</b>
           </li>
           <li>
-            <b>{{author.attention}}</b>
+            <b>{{ author.attention }}</b>
             <b>关注</b>
           </li>
           <li>
-            <b>{{author.fans}}</b>
+            <b>{{ author.fans }}</b>
             <b>粉丝</b>
           </li>
           <li>
-            <b>{{author.comment}}</b>
+            <b>{{ author.comment }}</b>
             <b>评论</b>
           </li>
         </ul>
@@ -52,15 +52,15 @@
           <div class="wname">
             <img :src="author.imgpath" alt="头像" />
             <!-- <a @click="changego(href+item.web.id)"> -->
-            <a :href="href+'/BlogArticle/'+item.web.id" target="_blank">
+            <a :href="href + '/BlogArticle/' + item.web.id" target="_blank">
               <!-- <a href="href+item.web.id"> -->
-              <b>{{item.web.type}}</b>
-              {{item.web.title}}
+              <b>{{ item.web.type }}</b>
+              {{ item.web.title }}
             </a>
           </div>
           <div class="otherwise">
-            <span>阅读:{{item.visit}}</span>
-            <span class="biao">{{item.web.subTime}}</span>
+            <span>阅读:{{ item.visit }}</span>
+            <span class="biao">{{ item.web.subTime }}</span>
             <!-- <span>收藏: item.collection</span> -->
             <!-- <span>点赞:item.thumbs</span> -->
           </div>
@@ -101,7 +101,7 @@ export default {
           if (Response.data.json.code == 200) {
             that.author = { ...{}, ...Response.data.json.author };
             that.author.imgpath =
-              "http://121.199.27.93/img/" + that.author.imgpath;
+              "http://121.199.27.93/user/image/" + that.author.imgpath;
             //占坑
             that.zhankeng = "*";
             var titstr = that.author.username + " - CodeSharingCommunity";

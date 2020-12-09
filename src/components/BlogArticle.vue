@@ -343,7 +343,7 @@ export default {
             that.commentList.reverse();
             for (let index = 0; index < that.commentList.length; index++) {
               that.commentList[index].imgpath =
-                "http://121.199.27.93/img/" + that.commentList[index].imgpath;
+                "http://121.199.27.93/user/image/" + that.commentList[index].imgpath;
             }
             //document.title = "首页";
             // var titstr = that.web.title + " - CodeSharingCommunity";
@@ -415,7 +415,7 @@ export default {
             that.commentList.push({
               content: that.Statement,
               username: Response.data.json.username,
-              imgpath: "http://121.199.27.93/img/" + Response.data.json.imgpath,
+              imgpath: "http://121.199.27.93/user/image/" + Response.data.json.imgpath,
               createtime: Response.data.json.createtime,
             });
             that.commentList.reverse();
@@ -458,7 +458,7 @@ export default {
             that.author = { ...{}, ...Response.data.json.author };
             that.webList = [...[], ...Response.data.json.webList];
             that.author.imgpath =
-              "http://121.199.27.93/img/" + that.author.imgpath;
+              "http://121.199.27.93/user/image/" + that.author.imgpath;
             //占坑
             that.zhankeng = "*";
             var titstr =

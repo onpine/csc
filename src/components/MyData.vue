@@ -5,7 +5,7 @@
         <b>UID:</b>
       </dt>
       <dd v-show="true">
-        <span>{{user.id}}</span>
+        <span>{{ user.id }}</span>
       </dd>
     </dl>
     <dl>
@@ -13,7 +13,7 @@
         <b>帐号:</b>
       </dt>
       <dd v-show="true">
-        <span>{{user.uid}}</span>
+        <span>{{ user.uid }}</span>
       </dd>
     </dl>
     <dl>
@@ -21,11 +21,11 @@
         <b>昵称:</b>
       </dt>
       <dd v-show="status">
-        <span>{{user.username}}</span>
+        <span>{{ user.username }}</span>
       </dd>
       <dd>
         <input
-          v-show="! status"
+          v-show="!status"
           v-model="user.username"
           type="text"
           name="data_username"
@@ -39,7 +39,7 @@
         <b>邮箱:</b>
       </dt>
       <dd>
-        <span>{{user.email}}</span>
+        <span>{{ user.email }}</span>
       </dd>
     </dl>
     <dl>
@@ -47,11 +47,11 @@
         <b>位置:</b>
       </dt>
       <dd v-show="status">
-        <span>{{user.clazz}}</span>
+        <span>{{ user.clazz }}</span>
       </dd>
       <dd>
         <input
-          v-show="! status"
+          v-show="!status"
           v-model="user.clazz"
           type="text"
           name="data_clazz"
@@ -65,11 +65,11 @@
         <b>院系:</b>
       </dt>
       <dd v-show="status">
-        <span>{{user.college}}</span>
+        <span>{{ user.college }}</span>
       </dd>
       <dd>
         <input
-          v-show="! status"
+          v-show="!status"
           v-model="user.college"
           type="text"
           name="data_department"
@@ -80,11 +80,21 @@
     </dl>
     <dl>
       <dd>
-        <input v-show="status" @click="change()" type="button" value="修改信息" />
-        <input v-show="! status" @click="changeinfor()" type="submit" value="确认" />
+        <input
+          v-show="status"
+          @click="change()"
+          type="button"
+          value="修改信息"
+        />
+        <input
+          v-show="!status"
+          @click="changeinfor()"
+          type="submit"
+          value="确认"
+        />
       </dd>
       <dd>
-        <input v-show="! status" @click="change()" type="button" value="取消" />
+        <input v-show="!status" @click="change()" type="button" value="取消" />
       </dd>
     </dl>
     <div class="imgup">
@@ -102,7 +112,9 @@
       >
         <img v-if="imageUrl" :src="imageUrl" class="avatar" />
         <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-        <div slot="tip" class="el-upload__tip">只能上传jpg/png等文件，且不超过2MB</div>
+        <div slot="tip" class="el-upload__tip">
+          只能上传jpg/png等文件，且不超过2MB
+        </div>
       </el-upload>
     </div>
   </div>
@@ -263,7 +275,7 @@ export default {
             // console.log(Response.data.json.user);
             that.user = { ...this.user, ...this.$store.getters.getuser };
             // that.imgsrc =
-            //   "http://121.199.27.93/img/" + Response.data.json.user.imgpath;
+            //   "http://121.199.27.93/user/image/" + Response.data.json.user.imgpath;
 
             val = true;
           } else {

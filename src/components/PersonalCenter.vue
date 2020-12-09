@@ -9,7 +9,7 @@
             <img
               class="himg"
               :src="
-                'http://121.199.27.93/img/' +
+                'http://121.199.27.93/user/image/' +
                 this.$store.getters.getuser.imgpath
               "
               alt

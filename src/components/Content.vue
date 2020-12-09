@@ -35,7 +35,7 @@
           </div>
           <div class="wname">
             <img
-              :src="'http://121.199.27.93/img/' + item.user.imgpath"
+              :src="'http://121.199.27.93/user/image/' + item.user.imgpath"
               alt="头像"
             />
             <!-- <a @click="changego(href+item.web.id)"> -->
@@ -67,7 +67,7 @@
           </div>
           <div class="wname">
             <img
-              :src="'http://121.199.27.93/img/' + item3.user.imgpath"
+              :src="'http://121.199.27.93/user/image/' + item3.user.imgpath"
               alt="头像"
             />
             <a :href="href + '/BlogArticle/' + item3.web.id" target="_blank">
