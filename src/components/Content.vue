@@ -5,7 +5,7 @@
       <!-- <h2>文章类型</h2> -->
       <ul>
         <h2 class="hli" @click="changeRecommend">↶</h2>
-        <li><a>推荐</a></li>
+        <li :class="{ liactive: isActive === -1 }"><a>推荐</a></li>
         <li
           :class="{ liactive: index1 === isActive }"
           v-for="(item1, index1) in labelList"
@@ -99,7 +99,7 @@ import store from "../store";
 export default {
   data() {
     return {
-      isActive: 0,
+      isActive: -1,
       labelList: [],
       lid: 0,
       users_list: [

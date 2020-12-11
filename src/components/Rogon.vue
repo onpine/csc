@@ -93,7 +93,7 @@ export default {
         })
         .then((Response) => {
           console.log("登出：" + Response.data.msg);
-          document.cookie = "Authorization=" + "; path=/;";
+          // document.cookie = "Authorization=" + "; path=/;";
           that.$store.commit("setuser", "");
           that.$store.commit("setsessionId", "");
         })
@@ -109,6 +109,7 @@ export default {
           params: {},
           headers: {
             "X-Requested-With": "XMLHttpRequest",
+            withCredentials:true
           },
         })
         .then((Response) => {
@@ -173,8 +174,8 @@ export default {
             console.log(document.cookie);
             that.AccessToken = Response.data.json.AccessToken;
 
-            document.cookie =
-              "Authorization=" + Response.data.json.AccessToken + "; path=/;";
+            // document.cookie =
+            //   "Authorization=" + Response.data.json.AccessToken + "; path=/;";
 
             that.$store.commit("setsessionId", Response.data.json.AccessToken);
             /**
