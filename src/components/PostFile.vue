@@ -7,7 +7,7 @@
         plain
         icon="el-icon-upload"
         @click="handlePostFile"
-        >上传资源</el-button
+        >确定上传</el-button
       >
     </div>
     <el-input

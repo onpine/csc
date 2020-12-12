@@ -262,36 +262,14 @@ export default {
      * 检查cookie，判断是否已登陆
      */
     firstCheck() {
-      console.log(document.cookie);
-      var kie = document.cookie.split("; ");
-      console.log(kie);
-      var key = false;
-      for (var item of kie) {
-        var one = item.split("=");
-        //将cookie里的sessionId数据set到store里
-        if (one[0] == "Authorization") {
-          key = true;
-          //sessionId不为空,有登录
-          if (one[1] != "") {
-            this.$store.commit("setsessionId", one[1]);
-            console.log(this.loginstatus());
-            if (this.loginstatus()) {
-              this.AccessToken = one[1];
-              //验证已登录后，由store中sessionId获取登录状态,将登陆状态放入store
-              this.$router.push({
-                path: "/LoggingStatus/PersonalCenter",
-              });
-            } else {
-              console.log("Rogon登录为空");
-            }
-          } else {
-            console.log("Authorization为空");
-          }
-        }
-      }
-      //cookie无sessionId
-      if (!key) {
-        console.log("Rogon无登录记录！cookie无Authorization");
+      if (this.loginstatus()) {
+        // this.AccessToken = one[1];
+        //验证已登录后，由store中sessionId获取登录状态,将登陆状态放入store
+        this.$router.push({
+          path: "/LoggingStatus/PersonalCenter",
+        });
+      } else {
+        console.log("Rogon登录为空");
       }
     },
     /**
@@ -300,13 +278,13 @@ export default {
     loginstatus() {
       let that = this;
       let session = this.$store.getters.getsessionId;
-      let val = true;
+      let val = false;
       axios
         .get("/user/loginstatus", {
           params: {},
-          headers: {
-            Authorization: session,
-          },
+          // headers: {
+          //   Authorization: session,
+          // },
         })
         .then((Response) => {
           if (Response.data.json.code == 200) {
